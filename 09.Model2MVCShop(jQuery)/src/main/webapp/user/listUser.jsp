@@ -54,8 +54,8 @@
 			
 			//==> 아래와 같이 정의한 이유는 ??
 			//==> 아래의 주석을 하나씩 풀어 가며 이해하세요.					
-			$(".ct_list_pop:nth-child(4n+6)" ).css("background-color" , "whitesmoke");
-			//console.log ( $(".ct_list_pop:nth-child(1)" ).html() );
+			//$(".ct_list_pop:nth-child(4n+6)" ).css("background-color" , "whitesmoke");
+			console.log ( $(".ct_list_pop:nth-child(1)" ).html() );
 			//console.log ( $(".ct_list_pop:nth-child(2)" ).html() );
 			//console.log ( $(".ct_list_pop:nth-child(3)" ).html() );
 			//console.log ( $(".ct_list_pop:nth-child(4)" ).html() ); //==> ok
@@ -102,7 +102,7 @@
 				<option value="1"  ${ ! empty search.searchCondition && search.searchCondition==1 ? "selected" : "" }>회원명</option>
 			</select>
 			<input type="text" name="searchKeyword" 
-						value="${! empty search.searchKeyword ? search.searchKeyword : ""}"  
+						value="${! empty search.searchKeyword ? search.searchKeyword : "" }"  
 						class="ct_input_g" style="width:200px; height:20px" > 
 		</td>
 		<td align="right" width="70">

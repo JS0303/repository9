@@ -6,6 +6,7 @@
 
 <head>
 	<meta charset="EUC-KR">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	
 	<title>회원가입</title>
 	
@@ -180,7 +181,8 @@
 											"scrollbars=no,scrolling=no,menubar=no,resizable=no");
 			});
 		});	
-
+		
+	
 	</script>		
 	
 </head>
@@ -417,6 +419,7 @@
 </table>
 
 </form>
+
 
 </body>
 

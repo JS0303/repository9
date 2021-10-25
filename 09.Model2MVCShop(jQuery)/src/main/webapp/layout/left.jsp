@@ -18,7 +18,7 @@
 	<script type="text/javascript">
 	
 		function history(){
-			popWin = window.open("/history.jsp",
+			popWin = window.open("../history.jsp",
 														"popWin",
 														"left=300, top=200, width=300, height=200, marginwidth=0, marginheight=0, scrollbars=no, scrolling=no, menubar=no, resizable=no");
 		}
@@ -28,7 +28,7 @@
 			 
 			//==> 개인정보조회 Event 연결처리부분
 			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-		 	$( ".Depth03:contains('개인정보조회')" ).on("click" , function() {
+		 	$( ".Depth03:contains('개인정보조회')" ).dblclick(function() {
 				//Debug..
 				//alert(  $( ".Depth03:contains('개인정보조회')" ).html() );
 				$(window.parent.frames["rightFrame"].document.location).attr("href","/user/getUser?userId=${user.userId}");
@@ -37,10 +37,45 @@
 			
 			//==> 회원정보조회 Event 연결처리부분
 			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-		 	$( ".Depth03:contains('회원정보조회')" ).on("click" , function() {
+		 	$( ".Depth03:contains('회원정보조회')" ).mouseleave(function() {
 				//Debug..
 				//alert(  $( ".Depth03:contains('회원정보조회')" ) );
 		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/user/listUser");
+			}); 
+		
+			
+			//==> 판매상품등록 Event 연결처리부분
+			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+		 	$( ".Depth03:contains('판매상품등록')" ).mouseenter(function() {
+				//Debug..
+				//alert(  $( ".Depth03:contains('판매상품등록')" ) );
+		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/product/addProductView.jsp");
+			}); 
+			
+			
+			//==> 판매상품관리 Event 연결처리부분
+			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+		 	$( ".Depth03:contains('판매상품관리')" ).on("click" , function() {
+				//Debug..
+				//alert(  $( ".Depth03:contains('판매상품관리')" ) );
+		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/listProduct?menu=manage");
+			}); 
+
+			
+			//==> 상 품 검 색 Event 연결처리부분
+			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+		 	$( ".Depth03:contains('상 품 검 색')" ).on("click" , function() {
+				//Debug..
+				//alert(  $( ".Depth03:contains('상 품 검 색')" ) );
+		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/product/listProduct.jsp");
+			}); 
+			
+			//==> 최근 본 상품 Event 연결처리부분
+			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+		 	$( ".Depth03:contains('최근 본 상품')" ).on("click" , function() {
+				//Debug..
+				//alert(  $( ".Depth03:contains('최근 본 상품')" ) );
+		 		$(window.parent.frames["rightFrame"].document.location).attr("href","../history.jsp");
 			}); 
 		});	
 		 
@@ -96,6 +131,7 @@
 					<!-- ////////////////// jQuery Event 처리로 변경됨 ///////////////////////// 
 						<a href="../product/addProductView.jsp;" target="rightFrame">판매상품등록</a>
 						////////////////////////////////////////////////////////////////////////////////////////////////// -->
+						판매상품등록
 					</td>
 				</tr>
 				<tr>
@@ -103,6 +139,7 @@
 					<!-- ////////////////// jQuery Event 처리로 변경됨 /////////////////////////
 						<a href="/listProduct.do?menu=manage"  target="rightFrame">판매상품관리</a>
 						////////////////////////////////////////////////////////////////////////////////////////////////// -->
+						판매상품관리
 					</td>
 				</tr>
 				<tr>
@@ -122,6 +159,7 @@
 				<!-- ////////////////// jQuery Event 처리로 변경됨 /////////////////////////
 					<a href="/listProduct.do?menu=search" target="rightFrame">상 품 검 색</a>
 					////////////////////////////////////////////////////////////////////////////////////////////////// -->
+					상 품 검 색
 				</td>
 			</tr>
 			
@@ -131,6 +169,7 @@
 				<!-- ////////////////// jQuery Event 처리로 변경됨 /////////////////////////
 					<a href="/listPurchase.do"  target="rightFrame">구매이력조회</a>
 					////////////////////////////////////////////////////////////////////////////////////////////////// -->
+					구매이력조회
 				</td>
 			</tr>
 			</c:if>
@@ -139,7 +178,11 @@
 				<td class="DepthEnd">&nbsp;</td>
 			</tr>
 			<tr>
-				<td class="Depth03"><a href="javascript:history()">최근 본 상품</a></td>
+				<td class="Depth03">
+				<!-- ////////////////// jQuery Event 처리로 변경됨 /////////////////////////
+				<a href="javascript:history()">최근 본 상품</a></td>
+					////////////////////////////////////////////////////////////////////////////////////////////////// -->
+				최근 본 상품
 			</tr>
 		</table>
 	</td>
