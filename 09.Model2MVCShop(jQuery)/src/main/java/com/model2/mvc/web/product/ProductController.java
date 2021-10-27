@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -154,7 +155,7 @@ public class ProductController {
 
 	//@RequestMapping("/listProduct.do")
 	@RequestMapping( value="listProduct")
-	public String listProduct(@ModelAttribute("search") Search search, Model model, HttpServletRequest request)
+	public String listProduct(@ModelAttribute("search") Search search, Model model, HttpServletRequest request, @RequestParam("menu") String menu)
 			throws Exception {
 
 		System.out.println("/product/listProduct : GET / POST");
@@ -173,7 +174,8 @@ public class ProductController {
 		model.addAttribute("list", map.get("list"));
 		model.addAttribute("resultPage", resultPage);
 		model.addAttribute("search", search);
-
+		model.addAttribute("menu", menu);
+		
 		return "forward:/product/listProduct.jsp";
 	}
 

@@ -22,27 +22,32 @@
 	<script type="text/javascript">
 	
 	//=====기존Code 주석 처리 후  jQuery 변경 ======//
-	function fncAddUser() {
+	function fncAddProduct() {
+	}
 	//===========================================//
-		//==> 추가된부분 : "확인"  Event 연결
+	
+		//==> jQuery 적용 추가된 부분
 		 $(function() {
+		//==> 추가된부분 : "확인"  Event 연결
 			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
 			//==> 1 과 3 방법 조합 : $("tagName.className:filter함수") 사용함.	
-			 $( "td.ct_btn01:contains('확인')" ).on("click" , function() {
+			 $( ".ct_btn01:contains('확인')" ).on("click" , function() {
 				//Debug..
 				//alert(  $( "td.ct_btn01:contains('확인')" ).html() );
-				fncAddUser();
+				
+				 $(window.parent.frames["rightFrame"].document.location).attr("href","/product/listProduct?menu=manage");
+			
 			});
-		});	
+			
 	
 		//==> 추가된부분 : "추가등록"  Event 연결
-		 $(function() {
 			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
 			//==> 1 과 3 방법 조합 : $("tagName.className:filter함수") 사용함.	
-			 $( "td.ct_btn01:contains('추가등록')" ).on("click" , function() {
+			 $( ".ct_btn01:contains('추가등록')" ).on("click" , function() {
 				//Debug..
 				//alert(  $( "td.ct_btn01:contains('추가등록')" ).html() );
-				window.open("../product/addProductView.jsp");
+				$(window.parent.frames["rightFrame"].document.location).attr("href","../product/addProductView.jsp");
+				
 			});
 		});	
 
