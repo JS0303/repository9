@@ -28,7 +28,7 @@
 			 
 			//==> 개인정보조회 Event 연결처리부분
 			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-		 	$( ".Depth03:contains('개인정보조회')" ).dblclick(function() {
+		 	$( ".Depth03:contains('개인정보조회')" ).click(function() {
 				//Debug..
 				//alert(  $( ".Depth03:contains('개인정보조회')" ).html() );
 				$(window.parent.frames["rightFrame"].document.location).attr("href","/user/getUser?userId=${user.userId}");
@@ -37,7 +37,7 @@
 			
 			//==> 회원정보조회 Event 연결처리부분
 			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-		 	$( ".Depth03:contains('회원정보조회')" ).mouseleave(function() {
+		 	$( ".Depth03:contains('회원정보조회')" ).click(function() {
 				//Debug..
 				//alert(  $( ".Depth03:contains('회원정보조회')" ) );
 		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/user/listUser");
@@ -46,7 +46,7 @@
 			
 			//==> 판매상품등록 Event 연결처리부분
 			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-		 	$( ".Depth03:contains('판매상품등록')" ).mouseenter(function() {
+		 	$( ".Depth03:contains('판매상품등록')" ).click(function() {
 				//Debug..
 				//alert(  $( ".Depth03:contains('판매상품등록')" ) );
 		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/product/addProductView.jsp");
@@ -58,7 +58,7 @@
 		 	$( ".Depth03:contains('판매상품관리')" ).on("click" , function() {
 				//Debug..
 				//alert(  $( ".Depth03:contains('판매상품관리')" ) );
-		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/listProduct?menu=manage");
+		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/product/listProduct?menu=manage");
 			}); 
 
 			
@@ -67,16 +67,20 @@
 		 	$( ".Depth03:contains('상 품 검 색')" ).on("click" , function() {
 				//Debug..
 				//alert(  $( ".Depth03:contains('상 품 검 색')" ) );
-		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/product/listProduct.jsp");
+		 		$(window.parent.frames["rightFrame"].document.location).attr("href","/product/listProduct?menu=search");
 			}); 
 			
-			//==> 최근 본 상품 Event 연결처리부분
+		 	//==> 최근 본 상품 Event 연결처리부분
 			//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
-		 	$( ".Depth03:contains('최근 본 상품')" ).on("click" , function() {
+		 	$( ".Depth03:contains('최근 본 상품')" ).click(function() {
 				//Debug..
 				//alert(  $( ".Depth03:contains('최근 본 상품')" ) );
-		 		$(window.parent.frames["rightFrame"].document.location).attr("href","../history.jsp");
+		 		window.open("../history.jsp",
+						"popWin",
+						"left=300, top=200, width=300, height=200, marginwidth=0, marginheight=0, scrollbars=no, scrolling=no, menubar=no, resizable=no");
 			}); 
+
+			
 		});	
 		 
 	</script>

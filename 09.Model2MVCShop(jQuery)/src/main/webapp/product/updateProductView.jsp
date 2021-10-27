@@ -52,6 +52,39 @@ function fncAddProduct(){
 	document.detailForm.submit();
 }
 -->
+
+//=====기존Code 주석 처리 후  jQuery 변경 ======//
+//===========================================//
+
+//==> jQuery 적용 추가된 부분
+$(function() {
+	//==> 추가된부분 : "수정"  Event 연결
+	//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+	//==> 1 과 3 방법 조합 : $("tagName.className:filter함수") 사용함.	
+	$(".ct_btn01:contains('수정')").on(
+			"click",
+			function() {
+				//Debug..
+				//alert(  $( "td.ct_btn01:contains('수정')" ).html() );
+
+				$(window.parent.frames["rightFrame"].document.location)
+						.attr("href", "javascript:fncAddProduct()");
+
+			});
+
+	//==> 추가된부분 : "취소"  Event 연결
+	//==> DOM Object GET 3가지 방법 ==> 1. $(tagName) : 2.(#id) : 3.$(.className)
+	//==> 1 과 3 방법 조합 : $("tagName.className:filter함수") 사용함.	
+	$(".ct_btn01:contains('취소')").on(
+			"click",
+			function() {
+				//Debug..
+				//alert(  $( "td.ct_btn01:contains('이전')" ).html() );
+				$(window.parent.frames["rightFrame"].document.location)
+						.attr("href", "javascript:history.go(-1)");
+
+			});
+});
 </script>
 </head>
 
@@ -159,17 +192,22 @@ function fncAddProduct(){
 						<img src="/images/ct_btnbg01.gif" width="17" height="23"/>
 					</td>
 					<td background="/images/ct_btnbg02.gif" class="ct_btn01"	style="padding-top: 3px;">
+						<!-- ////////////////// jQuery Event 처리로 변경됨 ///////////////////////// 
 						<a href="javascript:fncAddProduct();">수정</a>
-					</td>
-					<td width="14" height="23">
-						<img src="/images/ct_btnbg03.gif" width="14" height="23"/>
-					</td>
-					<td width="30"></td>
-					<td width="17" height="23">
-						<img src="/images/ct_btnbg01.gif"width="17" height="23"/>
-					</td>
-					<td background="/images/ct_btnbg02.gif" class="ct_btn01" style="padding-top: 3px;">
+						////////////////////////////////////////////////////////////////////////////////////////////////// -->
+								수정
+							</td>
+							<td width="14" height="23"><img src="/images/ct_btnbg03.gif"
+								width="14" height="23" /></td>
+							<td width="30"></td>
+							<td width="17" height="23"><img src="/images/ct_btnbg01.gif"
+								width="17" height="23" /></td>
+							<td background="/images/ct_btnbg02.gif" class="ct_btn01"
+								style="padding-top: 3px;">
+								<!-- ////////////////// jQuery Event 처리로 변경됨 ///////////////////////// 
 						<a href="javascript:history.go(-1)">취소</a>
+						////////////////////////////////////////////////////////////////////////////////////////////////// -->
+								취소
 					</td>
 					<td width="14" height="23">
 						<img src="/images/ct_btnbg03.gif" width="14" height="23"/>
