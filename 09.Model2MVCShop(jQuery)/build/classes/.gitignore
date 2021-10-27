@@ -1,5 +1,10 @@
 /com/
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
+/config/
+/log4j.properties
+>>>>>>> refs/heads/new/dev
 =======
 /config/
 /log4j.properties
